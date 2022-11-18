@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+     </script>
+     <link rel="stylesheet" href="{% static 'main.css' %}">
+     <style>
+          .bg-image {
+               /* The image used */
+               /* background: url('/static/images/background.png ');*/
+               background: url('{% static '/images/background.png' %}');
+               /* Add the blur effect */
+
+
+               /* Full height */
+               height: 100%;
+
+               /* Center and scale the image nicely */
+               background-position: center;
+               background-repeat: no-repeat;
+               background-size: cover;
+               margin-top: 90px;
+          }
+
+          .main {}
+     </style>
+     <title>Simple Blog</title>
+</head>
+
+<body>
+     <nav class="navbar fixed-top" style="background-color: #e3f2fd;">
+          <div class="container">
+
+               <div style="background: #95bea7;" class="container-fluid rounded ">
+                    <a class="navbar-brand" href="/"> <b>Simple Blog</b> </a>
+               </div>
+          </div>
+     </nav>
+
+
+
+     <!-- Background image -->
+     <div class="bg-image" >
+          {% block content %}
+
+          {% endblock content %}
+
+     </div>
+     <!-- Background image -->
+
+
+
+     <!-- Footer -->
+     <div class="container top d-flex justify-content-end rounded">
+
+          <img class="img d-flex justigy-content-end"
+               src="https://static.vecteezy.com/system/resources/previews/009/242/243/non_2x/blog-outline-icon-free-vector.jpg"
+               alt="">
+     </div>
+     <footer class="bg-dark text-center text-white">
+
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color:#2b363e;">
+               © 2022 Copyright:
+               <a class="text-white">Simple Blog</a>
+          </div>
+          <!-- Copyright -->
+     </footer>
+     <!-- Footer -->
+
+
+
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+     </script>
+     <script>
+
+
+     </script>
+</body>
+
+</html>

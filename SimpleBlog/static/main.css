@@ -1,0 +1,94 @@
+
+
+.top {
+     margin-top: 250px;
+}
+.bottom{
+     margin-bottom: 100px;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+html,
+body {
+     -moz-box-sizing: border-box;
+     box-sizing: border-box;
+     height: 100%;
+     width: 100%;
+     background: #FFF;
+     font-family: 'Roboto', sans-serif;
+     font-weight: 400;
+
+}
+
+.wrapper {
+     display: table;
+     height: 100%;
+     width: 100%;
+}
+
+.container-fostrap {
+     display: table-cell;
+     padding: 1em;
+     text-align: center;
+     vertical-align: middle;
+}
+
+.fostrap-logo {
+     width: 100px;
+     margin-bottom: 15px
+}
+
+h1.heading {
+     color: #fff;
+     font-size: 1rem;
+     font-weight: 600;
+     margin-top: 20px;
+     color: #2d1d1d;
+     text-align: start;
+}
+
+@media (min-width: 450px) {
+     h1.heading {
+          font-size: 3.55em;
+     }
+}
+
+@media (min-width: 760px) {
+     h1.heading {
+          font-size: 3.05em;
+     }
+}
+
+@media (min-width: 900px) {
+     h1.heading {
+          font-size: 3.25em;
+          margin: 0 0 0.3em;
+     }
+}
+
+.img {
+     width: auto;
+     height: 100px;
+}
+
+* {
+     box-sizing: border-box;
+}
+
+
+
+/* Position text in the middle of the page/image */
+.bg-text {
+
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     z-index: 2;
+     width: 80%;
+     padding: 20px;
+     margin-top: 100px;
+}
+.card-body-updated {
+     background-color: #cad0d6;
+}

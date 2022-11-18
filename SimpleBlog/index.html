@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+     </script>
+
+     <style>
+          .top {
+               margin-top: 100px;
+          }
+
+          @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,900);
+
+          html,
+          body {
+               -moz-box-sizing: border-box;
+               box-sizing: border-box;
+               height: 100%;
+               width: 100%;
+               background: #FFF;
+               font-family: 'Roboto', sans-serif;
+               font-weight: 400;
+
+          }
+
+          .wrapper {
+               display: table;
+               height: 100%;
+               width: 100%;
+          }
+
+          .container-fostrap {
+               display: table-cell;
+               padding: 1em;
+               text-align: center;
+               vertical-align: middle;
+          }
+
+          .fostrap-logo {
+               width: 100px;
+               margin-bottom: 15px
+          }
+
+          h1.heading {
+               color: #fff;
+               font-size: 1rem;
+               font-weight: 600;
+               margin: 0 0 0.5em;
+               color: #2d1d1d;
+               text-align: start;
+          }
+
+          @media (min-width: 450px) {
+               h1.heading {
+                    font-size: 3.55em;
+               }
+          }
+
+          @media (min-width: 760px) {
+               h1.heading {
+                    font-size: 3.05em;
+               }
+          }
+
+          @media (min-width: 900px) {
+               h1.heading {
+                    font-size: 3.25em;
+                    margin: 0 0 0.3em;
+               }
+          }
+
+          .card {
+               display: block;
+               margin-bottom: 20px;
+               line-height: 1.42857143;
+               background-color: #fff;
+               border-radius: 2px;
+               box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+               transition: box-shadow .25s;
+          }
+
+          .card:hover {
+               box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          }
+
+          .img-card {
+               width: 100%;
+               height: 200px;
+               border-top-left-radius: 2px;
+               border-top-right-radius: 2px;
+               display: block;
+               overflow: hidden;
+          }
+
+          .img-card img {
+               width: 100%;
+               height: 200px;
+               object-fit: cover;
+               transition: all .25s ease;
+          }
+
+          .card-content {
+               padding: 15px;
+               text-align: left;
+          }
+
+          .card-title {
+               margin-top: 0px;
+               font-weight: 700;
+               font-size: 1.65em;
+          }
+
+          .card-title a {
+               color: #000;
+               text-decoration: none !important;
+          }
+
+          .card-read-more {
+               border-top: 1px solid #D4D4D4;
+          }
+
+          .card-read-more a {
+               text-decoration: none !important;
+               padding: 10px;
+               font-weight: 600;
+               text-transform: uppercase
+          }
+
+          .img {
+               width: auto;
+               height: 100px;
+          }
+
+          * {
+          box-sizing: border-box;
+          }
+
+          .bg-image {
+          /* The image used */
+          background-image: url("./background.png");
+
+          /* Add the blur effect */
+          filter: blur(3px);
+          -webkit-filter: blur(3px);
+
+          /* Full height */
+          height: 100%;
+
+          /* Center and scale the image nicely */
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          margin-top: 90px;
+          }
+
+          /* Position text in the middle of the page/image */
+          .bg-text {
+
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          z-index: 2;
+          width: 80%;
+          padding: 20px;
+          margin-top: 100px;
+          }
+          
+
+
+
+
+
+
+
+
+
+
+
+
+          /* Font */
+          @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+
+          /* Design */
+          *,
+          *::before,
+          *::after {
+          box-sizing: border-box;
+          }
+
+          html {
+          background-color: #ecf9ff;
+          }
+
+          body {
+          color: #272727;
+          font-family: 'Quicksand', serif;
+          font-style: normal;
+          font-weight: 400;
+          letter-spacing: 0;
+          padding: 1rem;
+          }
+
+          .main{
+          max-width: 1200px;
+          margin: 0 auto;
+          }
+
+          h1 {
+          font-size: 24px;
+          font-weight: 400;
+          text-align: center;
+          }
+
+          img {
+          height: auto;
+          max-width: 100%;
+          vertical-align: middle;
+          }
+
+          .btnCard {
+          color: #ffffff;
+          padding: 0.8rem;
+          font-size: 14px;
+          text-transform: uppercase;
+          border-radius: 4px;
+          font-weight: 400;
+          display: block;
+          width: 100%;
+          cursor: pointer;
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          background: transparent;
+          }
+
+          .btnCard:hover {
+          background-color: rgba(255, 255, 255, 0.12);
+          }
+
+          .cards {
+          display: flex;
+          flex-wrap: wrap;
+          list-style: none;
+          margin: 0;
+          padding: 0;
+          }
+
+          .cards_item {
+          display: flex;
+          padding: 1rem;
+          }
+
+          @media (min-width: 40rem) {
+          .cards_item {
+          width: 50%;
+          }
+          }
+
+          @media (min-width: 56rem) {
+          .cards_item {
+          width: 33.3333%;
+          }
+          }
+
+          .card {
+          background-color: white;
+          border-radius: 0.25rem;
+          box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+          display: flex;
+          flex-direction: column;
+          overflow: hidden;
+          }
+
+          .card_content {
+          padding: 1rem;
+          background: linear-gradient(to bottom left, #EF8D9C 40%, #FFC39E 100%);
+          }
+
+          .card_title {
+          color: #ffffff;
+          font-size: 1.1rem;
+          font-weight: 700;
+          letter-spacing: 1px;
+          text-transform: capitalize;
+          margin: 0px;
+          }
+
+          .card_text {
+          color: #ffffff;
+          font-size: 0.875rem;
+          line-height: 1.5;
+          margin-bottom: 1.25rem;
+          font-weight: 400;
+          }
+          .made_by{
+          font-weight: 400;
+          font-size: 13px;
+          margin-top: 35px;
+          text-align: center;
+          }
+     </style>
+     <title>Simple Blog</title>
+</head>
+
+<body>
+     <nav class="navbar fixed-top" style="background-color: #e3f2fd;">
+          <div class="container">
+
+               <div style="background: #95bea7;" class="container-fluid rounded ">
+                    <a class="navbar-brand" href="/"> <b>Simple Blog</b> </a>
+               </div>
+          </div>
+     </nav>
+     <div class="bg-image"></div>
+
+     <div class="bg-text">
+
+          <div class="container top">
+
+               <a class="btn btn-info btn-md" href=""> Create Post</a>
+               <section class="wrapper">
+                    <div class="container-fostrap">
+                         <div>
+
+                              <h1 class="heading">
+                                   Top Post
+                              </h1>
+                         </div>
+                         <div class="content">
+                              <div class="container">
+                                   <div class="row">
+                                        <div class="col-xs-12 col-sm-4">
+                                             <div class="card">
+                                                  <a class="img-card"
+                                                       href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                                       <img
+                                                            src="https://1.bp.blogspot.com/-Bii3S69BdjQ/VtdOpIi4aoI/AAAAAAAABlk/F0z23Yr59f0/s640/cover.jpg" />
+                                                  </a>
+                                                  <div class="card-content">
+                                                       <h4 class="card-title">
+                                                            <a
+                                                                 href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html">
+                                                                 Material Design Responsive Menu
+                                                            </a>
+                                                       </h4>
+                                                       <p class="">
+                                                            Material Design is a visual programming language made by
+                                                            Google.
+                                                            Language programming...
+
+                                                       </p>
+                                                  </div>
+                                                  <div class="card-read-more">
+                                                       <a href="http://www.fostrap.com/2016/03/bootstrap-3-carousel-fade-effect.html"
+                                                            class="btn btn-link btn-block">
+                                                            Read More
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4">
+                                             <div class="card">
+                                                  <a class="img-card"
+                                                       href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                                       <img
+                                                            src="https://3.bp.blogspot.com/-bAsTyYC8U80/VtLZRKN6OlI/AAAAAAAABjY/kAoljiMALkQ/s400/material%2Bnavbar.jpg" />
+                                                  </a>
+                                                  <div class="card-content">
+                                                       <h4 class="card-title">
+                                                            <a
+                                                                 href="http://www.fostrap.com/2016/02/awesome-material-design-responsive-menu.html">
+                                                                 Material Design Responsive Menu
+                                                            </a>
+                                                       </h4>
+                                                       <p class="">
+                                                            Material Design is a visual programming language made by
+                                                            Google.
+                                                            Language programming...
+                                                       </p>
+                                                  </div>
+                                                  <div class="card-read-more">
+                                                       <a href="https://codepen.io/wisnust10/full/ZWERZK/"
+                                                            class="btn btn-link btn-block">
+                                                            Read More
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-4">
+                                             <div class="card">
+                                                  <a class="img-card"
+                                                       href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">
+                                                       <img
+                                                            src="https://4.bp.blogspot.com/-TDIJ17DfCco/Vtneyc-0t4I/AAAAAAAABmk/aa4AjmCvRck/s1600/cover.jpg" />
+                                                  </a>
+                                                  <div class="card-content">
+                                                       <h4 class="card-title">
+                                                            <a
+                                                                 href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html">5
+                                                                 Button Hover Animation Effects
+                                                            </a>
+                                                       </h4>
+                                                       <p class="">
+                                                            Material Design is a visual programming language made by
+                                                            Google.
+                                                            Language programming...
+                                                       </p>
+                                                  </div>
+                                                  <div class="card-read-more">
+                                                       <a href="http://www.fostrap.com/2016/03/5-button-hover-animation-effects-css3.html"
+                                                            class="btn btn-link btn-block">
+                                                            Read More
+                                                       </a>
+                                                  </div>
+                                             </div>
+                                        </div>
+
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </section>
+          </div>
+     </div>
+     <div class="main">
+          <h1>Responsive Card Grid Layout</h1>
+          <ul class="cards">
+               <li class="cards_item">
+                    <div class="card">
+                         <div class="card_image"><img src="https://picsum.photos/500/300/?image=10"></div>
+                         <div class="card_content">
+                              <h2 class="card_title">Card Grid Layout</h2>
+                              <p class="card_text">Demo of pixel perfect pure CSS simple responsive card grid layout</p>
+                              <button class="btnCard card_btn">Read More</button>
+                         </div>
+                    </div>
+               </li>
+ 
+          </ul>
+     </div>
+
+     <h3 class="made_by">Made with ♡</h3>
+
+     <!-- Footer -->
+     <div class="container top d-flex justify-content-end rounded">
+
+          <img class="img d-flex justigy-content-end"
+               src="https://static.vecteezy.com/system/resources/previews/009/242/243/non_2x/blog-outline-icon-free-vector.jpg"
+               alt="">
+     </div>
+     <footer class="bg-dark text-center text-white">
+
+
+          <!-- Copyright -->
+          <div class="text-center p-3" style="background-color:#2b363e;">
+               © 2022 Copyright:
+               <a class="text-white">Simple Blog</a>
+          </div>
+          <!-- Copyright -->
+     </footer>
+     <!-- Footer -->
+
+
+
+
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+     </script>
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<form method="post">
+     {% csrf_token %}
+
+     <div class="container top">
+
+          <h2 class="d-inline">Do You want to delete this Blog</h2>
+
+          <h2 class="d-inline bottom"><b>{{book.title}}?</b></h2>
+          <input type="submit" class="btn btn-danger top" value="Yes Delete it">
+          <a href="{% url 'home' %}"><button class="btn btn-success top">Back</button></a>
+     </div>
+</form>
+{% endblock content %}

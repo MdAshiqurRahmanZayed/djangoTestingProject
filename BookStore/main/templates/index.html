@@ -1,0 +1,40 @@
+     {% extends 'base.html' %}
+
+     {% block content %}
+
+
+
+     <div class="container top top">
+          <table class="table">
+               <thead>
+                    <tr class="table-dark">
+                         <th scope="col">Book title</th>
+                         <th scope="col">Author</th>
+                         <th scope="col">Date Created</th>
+                         <th scope="col">Edit</th>
+                         <th scope="col">Delete</th>
+                    </tr>
+               </thead>
+
+               <tbody>
+                    {% for book in allbook %}
+                    <tr style="background: rgba(255,255,255,0.5);backdrop-filter: blur(.5px);">
+
+                         <td> <a href="{% url 'detail' book.slug %}">{{book.title}}</a> </td>
+                         <td>{{book.author}}</td>
+                         <td>{{book.date_created}}</td>
+                         <td><a href="{% url 'update' book.slug%}"><button  type="button" class="btn btn-primary">Edit</button></a></td>
+                         <td><a href="{% url 'delete' book.slug%}"><button  type="button" class="btn btn-danger">Delete</button></a></td>
+
+
+                    </tr>
+                    {% endfor %}
+
+               </tbody>
+          </table>
+
+     </div>
+
+
+
+     {% endblock content %}

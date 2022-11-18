@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container top">
+
+     <div class="card">
+          <div class="card-header">
+               <h2><b>{{book.title}}</b></h2>
+               <h6>Created At: {{book.date_created}}</h6>
+               <br> 
+               <footer class="blockquote-footer">Author By <cite title="Source Title">{{book.author}}</cite>
+                    </footer>
+               <a href="{% url 'update' book.slug %}"><button class="btn btn-primary">Edit</button></a> 
+               <a href="{% url 'delete' book.slug %}"><button class="btn btn-danger">Delete</button></a> 
+          </div>
+          <div class="card-body">
+               <blockquote class="blockquote mb-0">
+                    <p>{{book.descriptions}}</p>
+                    
+               </blockquote>
+          </div>
+     </div>
+
+</div>
+
+{% endblock content %}

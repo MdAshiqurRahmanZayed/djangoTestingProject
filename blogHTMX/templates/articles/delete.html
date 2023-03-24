@@ -1,0 +1,18 @@
+<script>
+  document.body.addEventListener('htmx:configRequest', (event) => {
+    event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+  })
+</script>
+<div >
+  <form method="post" >
+  {% csrf_token %}
+    <button class="btn btn-danger"
+      hx-delete="{% url 'article-delete' article.id %}"
+      hx-confirm="Are you sure, You want to delete this article?"
+      type="submit"
+      hx-redirect="{% url 'article-list' %}"
+      >
+      Delete
+    </button>
+  </form>
+</div>

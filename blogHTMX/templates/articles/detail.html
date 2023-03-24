@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+  {% include 'articles/delete.html' %}
+     <div id="article-card">
+          <h2>Title:{{ article.title }}
+          <p>content:{{ article.content|linebreaks|safe }}</p>
+     <div>
+<div>
+{% endblock %}

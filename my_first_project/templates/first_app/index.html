@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block content %}
+     
+
+<h1>Add new musician</h1>
+
+{% if heading %}
+
+<h4>{{heading}}</h4>
+{% endif %}
+<div class="container">
+     <a href="{% url 'form' %}">Add musician</a>     
+     <table border ="1">
+          <tr>
+               <th>First name</th>
+               <th>Last name</th>
+               <th>Instrument</th>
+          </tr>
+          {% for row in musician_list %}
+          <tr>
+               <td>{{row.first_name}}</td>
+               <td>{{row.last_name}}</td>
+               <td>{{row.instrument}}</td>
+          </tr>
+     {% endfor %}
+</table>
+</div>
+
+{% comment %} <h3>{{text|custom_filter}}</h3> {% endcomment %}
+<h3>{{text|custom_filter:"New addition"}}</h3>
+
+
+{% endblock content %}

@@ -1,7 +1,19 @@
 {% extends "base.html" %}
 {% load my_filters %}
 {% block content %}
+<h3>Musicaian list</h3>
+
+{% if musician_list %}
+     <ul>
+          {% for musician in  musician_list %}
+          <li><a href="{% url 'album_list' artist_id=musician.id %}">{{musician.first_name}} {{musician.last_name}}</a></li>
+          {% endfor %}
+     </ul>
+{% else %}
+<h4>No musician</h4>
+{% endif %}
      
+{% comment %}      
 
 <h1>Add new musician</h1>
 
@@ -10,7 +22,7 @@
 <h4>{{heading}}</h4>
 {% endif %}
 <div class="container">
-     <a href="{% url 'form' %}">Add musician</a>     
+     <a href="">Add musician</a>     
      <table border ="1">
           <tr>
                <th>First name</th>
@@ -28,7 +40,6 @@
 </div>
 
 {% comment %} <h3>{{text|custom_filter}}</h3> {% endcomment %}
-<h3>{{text|custom_filter:"New addition"}}</h3>
-
+{% comment %} <h3>{{text|custom_filter:"New addition"}}</h3> {% endcomment %}
 
 {% endblock content %}

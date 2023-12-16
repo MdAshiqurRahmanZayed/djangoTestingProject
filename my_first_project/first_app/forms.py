@@ -2,6 +2,7 @@ from typing import Any
 from django import forms 
 from django.core import validators
 from first_app.models import *
+from django import forms
 def evenORodd(value):
      if value%2==1:
           raise forms.ValidationError("Please enter even number")
@@ -40,4 +41,9 @@ def evenORodd(value):
 class musicianForm(forms.ModelForm):
      class Meta:
           model = Musician
+          fields = '__all__'
+class albumForm(forms.ModelForm):
+     release_date = forms.DateField(widget=forms.TextInput(attrs={'type':'date'}))
+     class Meta:
+          model = Album
           fields = '__all__'

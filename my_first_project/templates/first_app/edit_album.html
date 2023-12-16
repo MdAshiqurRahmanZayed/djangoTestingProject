@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+     <h4>Edit Album</h4>
+     <form action="" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input class="btn btn-primary" type="submit" value="Edit">
+     </form>
+     <br>
+     <a href="{% url 'delete_album' album_id %}" class="btn btn-danger" onclick="return confirm('Delete this album?')">Delete</a>
+{% endblock content %}
+     

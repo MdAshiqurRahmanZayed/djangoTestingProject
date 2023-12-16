@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block content %}
+
+{% if success_message %}
+     <div class="alert alert-danger">{{success_message}}</div>
+{% endif %}
+     
+Name: <b>{{aritst_info.first_name}} {{aritst_info.last_name}}</b> <br>
+Name: <b>{{aritst_info.instrument}}</b><br>
+Artist rating: <b>{{artist_rating.num_stars__avg}}</b> <br> 
+<a class="btn btn-primary" href="{% url 'edit_artist' artist_id=aritst_info.id %}">Edit</a>
+
+
+<h3>List of all album</h3>
+<table class="table table-bordered">
+     <tr>
+          <th>Album Name</th>
+          <th>Relase data</th>
+          <th>Rating</th>
+     </tr>
+     
+     {% for album in album_list %}
+          
+     
+     <tr>
+          <td>
+               <a href="{% url 'edit_album' album_id=album.id %}">
+                    {{album.name}}
+               </a>
+          </td>
+          <td>
+               {{album.release_date|date:"M d,Y"}}
+          </td>
+          <td>
+               {{album.num_stars}}
+          </td>
+     </tr>
+     {% endfor %}
+</table>
+<a href="{% url 'delete_musician' aritst_info.id %}" class="btn btn-danger" onclick="return confirm('Are you wanr to delete artist?')">Delete</a>
+{% endblock %}

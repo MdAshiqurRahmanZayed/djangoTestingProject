@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block content %}
+<h3>Delete musician {{musician.first_name}} {{musician.last_name}}?</h3>
+<form action="" method="post">
+     {% csrf_token %}
+     <input class="btn btn-danger" type="submit" value="Delete">
+     <a href="{% url 'musician_detail' pk=musician.id%}" >Cancel</a>
+</form>
+{% endblock content %}

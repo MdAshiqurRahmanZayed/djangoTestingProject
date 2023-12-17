@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block content %}
+Name:{{musician_detail.first_name}} {{musician_detail.last_name}}
+<h3>Album</h3>
+<ul>
+     {% for album in  musician_detail.album.all %}
+     <li>
+{{album.name}}
+     </li>
+     {% endfor %}
+</ul>
+     
+<a class="btn btn-warning" href="{% url 'musician_update' musician_detail.id %}">
+     Update
+</a>
+<a class="btn btn-danger" href="{% url 'musician_delete' musician_detail.id %}">
+     Delete
+</a>
+{% endblock content %}

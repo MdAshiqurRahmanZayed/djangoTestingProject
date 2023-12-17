@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block content %}
+
+{% if form.instance.id %}
+     Update musician     
+{% else %}
+     ADD musician
+{% endif %}
+     
+     <form action="" method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input class="btn btn-primary" type="submit" value="Add">
+     </form>
+{% endblock content %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load my_filters %}
+{% block content %}
+<h3>Musicaian list</h3>
+
+{% if musician_list %}
+     <ul>
+          {% for musician in  musician_list %}
+          <li><a href="{% url 'musician_detail' musician.id %}">{{musician.first_name}} {{musician.last_name}}</a></li>
+          {% endfor %}
+     </ul>
+{% else %}
+<h4>No musician</h4>
+{% endif %}
+     
+
+{% endblock content %}

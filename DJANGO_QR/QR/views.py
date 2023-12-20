@@ -15,5 +15,6 @@ def index(request):
         stream = BytesIO()
         img.save(stream)
         context["svg"] = stream.getvalue().decode()
+        print(context)
 
     return render(request, "index.html", context=context)

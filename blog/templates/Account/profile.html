@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block title %}
+Profile
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+     <h2>Your Profile</h2>
+
+     {% if user.user_profile %}
+     <img class="rounded-circle" src="{{user.user_profile.profile_pic.url}}" style="height: 100px;" alt="">
+     <a href="{% url 'change_pro_pic' %}" class="btn btn-info btn-sm">Change Profile Picture</a>
+
+     {% else %}
+     <img class="rounded-circle" style="height: 100px;" src="{% static 'images/person.jpg' %}" alt="">
+     <a href="{% url 'add_pro_pic' %}" class="btn btn-info btn-sm">Add Profile Picture</a>
+
+     
+     {% endif %}
+     
+     <p>Username:{{user.username}}</p>
+     <p>Email:{{user.email}}</p>
+     <p>Name:{{user.first_name}} {{user.last_name}}</p>
+     <a href="{% url 'change_password' %}" class="btn btn-warning">Change password</a>
+</div>
+<div class="container">
+     <h3>Change Profile</h3>
+     <form action="" method="post">
+          {% csrf_token %}
+          {{form|crispy}}
+          <input class="btn btn-primary" type="submit" value="Change profile">
+     </form>
+
+     <br>
+</div>
+{% endblock content %}

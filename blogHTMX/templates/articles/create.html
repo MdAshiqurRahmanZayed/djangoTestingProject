@@ -9,7 +9,7 @@
           <form>
                {% csrf_token %}
                {{ form.as_p }}
-               <button hx-post="." class="btn btn-success" type="submit" hx-redirect="/">Save</button>
+               <button hx-post="." hx-target="body" class="btn btn-success" type="submit" hx-redirect="/">Save</button>
           </form>
      </div>
 </div>

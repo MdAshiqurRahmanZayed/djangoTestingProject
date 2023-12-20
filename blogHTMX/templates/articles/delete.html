@@ -10,7 +10,8 @@
       hx-delete="{% url 'article-delete' article.id %}"
       hx-confirm="Are you sure, You want to delete this article?"
       type="submit"
-      hx-redirect="{% url 'article-list' %}"
+      hx-redirect="/"
+      hx-target="body"
       >
       Delete
     </button>

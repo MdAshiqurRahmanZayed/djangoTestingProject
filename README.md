@@ -32,3 +32,17 @@ $ python manage.py migrate
 $ python manage.py createsuperuser
 $ python manage.py runserver
 ```
+
+Demo:<br>
+Blog:
+![](screenshot/blog/a.png)
+![](screenshot/blog/b.png)
+![](screenshot/blog/c.png)
+DJANGO_QR:
+![](screenshot/DJANGO_QR/a.png)
+BookStore:
+![](screenshot/BookStore/a.png)
+SimpleBlog:
+![](screenshot/SimpleBlog/a.png)
+weatherdector:
+![](screenshot/weatherdector/a.png)

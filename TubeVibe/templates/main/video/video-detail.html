@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<div class="container mb-4">
+
+     <div class="row">
+          <div class="col-md-8">
+               <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/{{ video.youtube_video }}" allowfullscreen></iframe>
+               </div>
+               <div class="mt-5">
+                    <h3>
+                         <b>
+                              {{ video.title }}
+                         </b>
+                         <br>
+                    </h3>
+                    <h4>
+                         Category: <b>{{ video.category.title }}</b>
+                    </h4>
+                    <p>
+                         Description: <br>
+                         {{ video.description }}
+                    </p>
+
+               </div>
+
+          </div>
+          <div class="col-md-4">
+               <h1>Related Videos</h1>
+
+               {% for related_video in  related_videos %}
+               <div class="row">
+                    <div class="col-md-4">
+                         <div class="ratio ratio-16x9">
+                              <iframe src="https://www.youtube.com/embed/{{ related_video.youtube_video }}"
+                                   allowfullscreen></iframe>
+                         </div>
+                    </div>
+                    <div class="col-md-8">
+                         <a href="">
+                              {{related_video.title}}
+                         </a>
+                    </div>
+               </div>
+               {% endfor %}
+
+          </div>
+     </div>
+     <div class="row">
+          <div class="col">
+               <h2>Comments...</h2>
+               {% for feedback in video.feedbacks.all %}
+               <h5>
+                    {{ feedback.comment }}
+               </h5>
+               <p>
+                    <b>
+                         <p class="mb-0">Channel Name:
+                              <a href="{% url 'main:indivitual_user_all_video' feedback.user.username %}">
+                                   <b>@{{feedback.user.username}}</b>
+                              </a>
+                         </p>
+                    </b>
+               </p>
+               {% endfor %}
+          </div>
+          <div class="col">
+               <form method="POST">
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <button class="btn btn-primary">Comment</button>
+               </form>
+          </div>
+     </div>
+
+</div>
+
+{% endblock body %}

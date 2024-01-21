@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<div class="container">
+     <h1>See
+          {% if indivitual_user %}
+          @{{indivitual_user}}
+          {% else %}
+          Your
+          {% endif %}
+
+          all video</h1>
+
+     <div class="container mt-5">
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+               {% for video in videos %}
+               <div class="col">
+                    <div class="card">
+                         <div class="ratio ratio-16x9">
+                              <iframe src="https://www.youtube.com/embed/{{ video.youtube_video }}"
+                                   allowfullscreen></iframe>
+                         </div>
+                         <div class="card-body">
+                              <a href="{% url 'main:video_detail' video.slug %}">
+                                   <h5 class="card-title">
+                                        {{ video.title|slice:":50" }}
+                                   </h5>
+                              </a>
+                              <div class="d-flex align-items-center">
+                                   <p class="mb-0">Channel Name:
+                                        <a href="{% url 'main:indivitual_user_all_video' video.user.username %}">
+                                             <b>@{{video.user.username}}</b>
+                                        </a>
+                                   </p>
+                              </div>
+                         </div>
+
+                         {% if video.user.id is request.user.id %}
+                         <div class="row mb-1">
+                              <div class="col d-flex justify-content-center">
+                                   <a class="btn btn-primary" href="{% url 'main:update_video' video.slug %}">
+                                        Update
+                                   </a>
+                              </div>
+                              <div class="col d-flex justify-content-center">
+                                   <a class="btn btn-danger" href="{% url 'main:delete_video' video.id %}">
+                                        Delete
+                                   </a>
+                              </div>
+                         </div>
+
+                         {% endif %}
+
+                    </div>
+               </div>
+               {% endfor %}
+
+          </div>
+
+
+     </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block body %}
+
+<div class="container">
+     
+     {% if not message %}
+          
+     <h1>Do You want to delete <b class="text-danger">{{video.title}}</b>?</h1>
+     <form action="" method="POST">
+          {% csrf_token %}
+          <button class="btn btn-danger">Delete</button>
+     </form>
+     {% else %}
+     <h3>{{message}}</h3>
+     {% endif %}
+          
+{% endblock body %}

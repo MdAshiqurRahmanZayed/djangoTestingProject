@@ -34,6 +34,12 @@ $ python manage.py runserver
 ```
 
 Demo:<br>
+TubeVideo:
+![](screenshot/TubeVibe/a.png)
+![](screenshot/TubeVibe/b.png)
+![](screenshot/TubeVibe/c.png)
+
+
 Blog:
 ![](screenshot/blog/a.png)
 ![](screenshot/blog/b.png)

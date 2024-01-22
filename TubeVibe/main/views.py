@@ -70,7 +70,7 @@ def video_detail(request, slug):
         if form.is_valid():
             feedback = form.save(commit=False)
             feedback.user = request.user
-            feedback.feedbacks = video
+            feedback.feedback_video = video
             feedback.save() 
             return redirect('main:video_detail', slug=video.slug)
 

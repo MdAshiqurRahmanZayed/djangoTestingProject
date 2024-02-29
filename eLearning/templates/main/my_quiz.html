@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    {% for q in quiz %}
+    <ul>
+        <li>
+            <a href="{% url 'main:quiz_question_create' q.id %}">
+                {{ q.title }}
+            </a>
+        </li>
+    </ul>
+    {% endfor %}
+</div>
+{% endblock %}

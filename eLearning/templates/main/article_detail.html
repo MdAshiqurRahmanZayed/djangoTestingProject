@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <h1>{{ article.title }}</h1>
+    <p>Category: {{ article.category }}</p>
+    <p>Author: {{ article.author }}</p>
+    <p>Created at: {{ article.created_at }}</p>
+    <p>{{ article.content }}</p>
+    
+    {% if article.author is request.user %}
+    <a href="{% url 'main:article_update' article.pk %}">Edit</a>
+    <a href="{% url 'main:article_delete' article.pk %}">Delete</a>
+        
+    {% endif %}
+        
+</div>
+{% endblock body %}

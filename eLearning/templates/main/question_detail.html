@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+
+     <h1>{{ question.content }}</h1>
+     <h3>Answer:</h3>
+     <ul>
+    {% for answer in answers %}
+      <li>{{ answer.content }}</li>
+    {% endfor %}
+  </ul>
+  <h2>Add Answer</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+</div>
+{% endblock %}

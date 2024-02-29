@@ -1,0 +1,72 @@
+<header class="p-3 mb-3 border-bottom navbar-background-color">
+      <div class="container">
+           <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+                     <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+                          <use xlink:href="#bootstrap" /></svg>
+                </a>
+
+                <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                     <li><a href="{% url 'main:home' %}" hx-boost="true" class="nav-link px-2 link-dark">
+                               <b>
+                                    Elearning
+                               </b>
+                          </a></li>
+                </ul>
+
+                <div class="dropdown ms-2 text-end">
+               {% comment %} <a hx-boost="true" href="{% url 'Accounts:About' %}" class="btn btn-outline-primary">About</a> 
+               <a hx-boost="true" href="{% url 'Accounts:Contact_us' %}" class="btn btn-outline-success">Contact Us</a>  {% endcomment %}
+               </div>
+                {% if request.user.is_authenticated %}
+
+                <div class="dropdown ms-2 text-end">
+                     <a href="#" class="d-block link-dark text-decoration-none" id="navbarDropdown" role="button"
+                          data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          @{{request.user.username}}
+                     </a>
+                     <ul class="dropdown-menu text-small" aria-labelledby="navbarDropdown">
+                          <li><a hx-boost="true" href="{% url 'main:article_list' %}"
+                                    class="nav-link px-2 link-dark">Article List</a></li>
+                         <li><a hx-boost="true" href="{% url 'main:article_create' %}"
+                                   class="nav-link px-2 link-dark">Create Article</a></li>
+                          <li><a hx-boost="true" href="{% url 'main:question_list' %}"
+                                    class="nav-link px-2 link-dark">Question List</a></li>
+                          <li><a hx-boost="true" href="{% url 'main:question_create' %}"
+                                    class="nav-link px-2 link-dark">Create Question</a></li>
+
+                          <li><a hx-boost="true" href="{% url 'main:quiz_create' %}"
+                                    class="nav-link px-2 link-dark">Create Quiz</a></li>
+                          <li><a hx-boost="true" href="{% url 'main:my_quiz' %}"
+                                    class="nav-link px-2 link-dark">My Quiz</a></li>
+                         <li><a hx-boost="true" href="{% url 'main:quiz_list' %}"
+                                    class="nav-link px-2 link-dark">Quiz List</a></li>
+                     </ul>
+                </div>
+                
+                {% else %}
+                {% endif %}
+                {% if not request.user.is_authenticated %}
+                <div class=" ms-2 text-end">
+                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                          <li><a hx-boost="true" href="{% url 'Accounts:register' %}"
+                                    class="nav-link px-2 link-dark">Register</a></li>
+                          <li><a hx-boost="true" href="{% url 'Accounts:login' %}"
+                                    class="nav-link px-2 link-dark">Login</a></li>
+                     </ul>
+                </div>
+                
+                {% else %}
+                <div class=" ms-2 text-end">
+                     <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+                          <li><a hx-boost="true" href="{% url 'Accounts:logout' %}"
+                                    class="nav-link px-2 link-dark">Logout</a></li>
+                          
+                            
+                     </ul>
+                </div>
+                {% endif %}
+
+           </div>
+      </div>
+ </header>

@@ -43,6 +43,8 @@
                                    class="nav-link px-2 link-dark">Create Article</a></li>
                          <li><a hx-boost="true" href="{% url 'main:quiz_create' %}"
                                    class="nav-link px-2 link-dark">Create Quiz</a></li>
+                                   <li><a hx-boost="true" href="{% url 'main:my_quiz' %}" class="nav-link px-2 link-dark">My
+                                             Quiz</a></li>
                          {% endif %}
                          {% if request.user.user_type == 'S' %}
 
@@ -51,8 +53,6 @@
                          <li><a hx-boost="true" href="{% url 'main:question_create' %}"
                                    class="nav-link px-2 link-dark">Create Question</a></li>
 
-                         <li><a hx-boost="true" href="{% url 'main:my_quiz' %}" class="nav-link px-2 link-dark">My
-                                   Quiz</a></li>
                          <li><a hx-boost="true" href="{% url 'main:quiz_list' %}" class="nav-link px-2 link-dark">Quiz
                                    List</a></li>
                          {% endif %}

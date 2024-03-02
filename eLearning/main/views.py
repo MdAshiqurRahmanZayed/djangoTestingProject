@@ -164,7 +164,7 @@ def quiz_question_create(request, quiz_id):
             question = form.save(commit=False)
             question.quiz = quiz  
             question.save()
-            return redirect('main:question_list')  
+            return redirect('main:my_quiz')  
     else:
         form = QuizQuestionForm()
     
